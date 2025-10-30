@@ -35,7 +35,7 @@ jobs:
             - name: Setup emsdk cache
               if: steps.cache-libqalculate.outputs.cache-hit != 'true'
               id: cache-system-libraries
-              uses: actions/cache@v2
+              uses: actions/cache@v4
               with:
                   path: ${{env.EM_CACHE_FOLDER}}
                   key: ${{env.EM_VERSION}}-${{ runner.os }}
@@ -43,7 +43,7 @@ jobs:
             - name: Setup libqalculate prerequisite cache
               if: steps.cache-libqalculate.outputs.cache-hit != 'true'
               id: cache-prerequisites
-              uses: actions/cache@v2
+              uses: actions/cache@v4
               with:
                   path: |
                       ~/opt-prerequisites/lib
